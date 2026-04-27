@@ -17,6 +17,18 @@ winget install --id Git.Git -e --source winget --accept-package-agreements --acc
 - A second PowerShell window opens and keeps the app running.
 - Your browser opens to `http://localhost:3000` automatically when the app is ready.
 
+## Every Time After
+
+After the first setup, open the `Sonsie` folder and double-click `Start Sonsie.bat`.
+
+That file:
+
+- checks that Git, Node.js, and npm are available
+- pulls the latest repo updates with `git pull --ff-only`
+- makes sure dependencies are installed correctly
+- starts the app
+- opens `http://localhost:3000`
+
 ## Demo Credentials
 
 Username: `SonsieAdmin`
