@@ -7,15 +7,15 @@ Sonsie Mock Inventory System is a frontend-only Next.js demo for an internal res
 Open Windows Terminal, paste this single line, and press `Enter`:
 
 ```powershell
-winget install --id Git.Git -e --source winget --accept-package-agreements --accept-source-agreements; winget install --id OpenJS.NodeJS.LTS -e --source winget --accept-package-agreements --accept-source-agreements; $git=@("$env:ProgramFiles\Git\cmd\git.exe","$env:LocalAppData\Programs\Git\cmd\git.exe") | Where-Object { Test-Path $_ } | Select-Object -First 1; $npm=@("$env:ProgramFiles\nodejs\npm.cmd","$env:LocalAppData\Programs\nodejs\npm.cmd") | Where-Object { Test-Path $_ } | Select-Object -First 1; if (-not $git -or -not $npm) { throw "Git or Node.js was not found after installation. Close Windows Terminal, reopen it, and run this command again." }; if (Test-Path .\Sonsie) { throw "A .\Sonsie folder already exists here. Move or rename it, then run this command again." }; & $git clone https://github.com/dand58022/Sonsie; Set-Location .\Sonsie; & $npm install; & $npm run dev
+winget install --id Git.Git -e --source winget --accept-package-agreements --accept-source-agreements; winget install --id OpenJS.NodeJS.LTS -e --source winget --accept-package-agreements --accept-source-agreements; $git=@("$env:ProgramFiles\Git\cmd\git.exe","$env:LocalAppData\Programs\Git\cmd\git.exe") | Where-Object { Test-Path $_ } | Select-Object -First 1; if (-not $git) { throw "Git was not found after installation. Close Windows Terminal, reopen it, and run this command again." }; if (Test-Path .\Sonsie) { throw "A .\Sonsie folder already exists here. Move or rename it, then run this command again." }; & $git clone https://github.com/dand58022/Sonsie; Set-Location .\Sonsie; powershell -ExecutionPolicy Bypass -File .\scripts\start-sales-demo.ps1
 ```
 
 ## What To Expect
 
 - Windows may ask you to approve the Git and Node.js installs. Accept those prompts.
 - The first launch can take a few minutes because it installs everything automatically.
-- Keep the terminal window open while the app is running.
-- When the command finishes starting the app, open `http://localhost:3000` in your browser.
+- A second PowerShell window opens and keeps the app running.
+- Your browser opens to `http://localhost:3000` automatically when the app is ready.
 
 ## Demo Credentials
 
@@ -59,8 +59,7 @@ If Git and Node.js are already installed, use:
 ```powershell
 git clone https://github.com/dand58022/Sonsie
 cd .\Sonsie
-npm install
-npm run dev
+powershell -ExecutionPolicy Bypass -File .\scripts\start-sales-demo.ps1
 ```
 
 ## Notes

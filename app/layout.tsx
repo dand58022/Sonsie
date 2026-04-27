@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Geist_Mono } from 'next/font/google'
 import localFont from 'next/font/local'
-import { Analytics } from '@vercel/analytics/next'
 import { ActivityProvider } from '@/components/activity'
 import { AuthProvider } from '@/components/auth'
 import { InventoryProvider } from '@/components/inventory'
@@ -73,7 +72,6 @@ export default function RootLayout({
           </AuthProvider>
           <Toaster richColors position="bottom-right" />
         </ThemeProvider>
-        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )
