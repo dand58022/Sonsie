@@ -29,6 +29,21 @@ That file:
 - starts the app
 - opens `http://localhost:3000`
 
+## If The First Install Failed
+
+If the first one-line setup command already created a `Sonsie` folder but failed partway through:
+
+1. Open Windows Terminal.
+2. Go into the existing `Sonsie` folder.
+3. Run `git pull`.
+4. Double-click `Start Sonsie.bat` in that folder, or run `.\Start Sonsie.bat`.
+
+If the existing `Sonsie` folder is incomplete or broken and `git pull` does not work:
+
+1. Delete that `Sonsie` folder.
+2. Open Windows Terminal again.
+3. Run the one-line setup command from this README one more time.
+
 ## Demo Credentials
 
 Username: `SonsieAdmin`

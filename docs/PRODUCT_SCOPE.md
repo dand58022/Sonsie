@@ -1,4 +1,4 @@
-# Drop Your Pantry Product Scope
+# Sonsie Product Scope
 
 **Date:** 2026-04-13 01:08 -04:00
 **Audience:** Project team
@@ -10,7 +10,7 @@
 
 ## Overview
 
-Drop Your Pantry is an internal inventory operations platform for a restaurant chain. The current root-level Next.js scaffold already represents the product shape: login, dashboard, inventory, CSV import, reorder recommendations, supplier orders, forecasting, audit log, and settings.
+Sonsie is an internal inventory operations platform demo for a restaurant team. The current root-level Next.js app already represents the product shape: login, dashboard, inventory, CSV import, reorder recommendations, supplier orders, forecasting, audit log, and settings.
 
 The product should help restaurant managers and operations staff understand whether the kitchen is ready for service, what needs to be counted or adjusted, what needs to be reordered, and what changed recently.
 
@@ -95,7 +95,7 @@ The app exists to answer operational questions quickly:
 | Supplies inventory | Exists as dashboard widget and mixed inventory category | Promote to full inventory category and dashboard visibility |
 | Tools inventory | Route tab exists but data model is missing | Add mock tool data and use same inventory table patterns |
 | Manual stock edits | Inline quantity edits exist | Standardize edit behavior and mock audit events |
-| CSV import | Exists | Refactor into components and make Korean BBQ sample data realistic |
+| CSV import | Exists | Refactor into components and make Sonsie sample data realistic |
 | Reorder recommendations | Exists | Add explanation and draft-order clarity |
 | Supplier orders | Exists | Keep Sysco as placeholder, not real integration |
 | Activity/audit | Exists | Connect mock activity to inventory actions where possible |

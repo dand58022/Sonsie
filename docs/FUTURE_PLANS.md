@@ -1,4 +1,4 @@
-# Drop Your Pantry Future Plans
+# Sonsie Future Plans
 
 **Date:** 2026-04-13 04:00 -04:00
 **Audience:** Project team

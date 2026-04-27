@@ -1,4 +1,4 @@
-# Drop Your Pantry Implementation Backlog
+# Sonsie Implementation Backlog
 
 **Date:** 2026-04-13 01:08 -04:00
 **Audience:** Project team
@@ -41,7 +41,7 @@ Unless the project maintainers explicitly request otherwise, all website data in
 | Task | Purpose | Dependencies | Difficulty | Data | Type |
 |------|---------|--------------|------------|------|------|
 | Normalize inventory categories | Fix the mismatch between `InventoryItem.category` values and inventory page tabs | Existing `mock-data.ts`, `inventory/page.tsx`, `inventory-table.tsx` | Medium | Mock | Refactor |
-| Add Korean BBQ realistic mock items | Replace generic restaurant examples with Korean BBQ inventory, supplies, and tools stored in fixtures or sample files | Normalized category model | Low | Mock | Refactor |
+| Add Sonsie-specific mock items | Replace generic restaurant examples with Sonsie inventory, supplies, and tools stored in fixtures or sample files | Normalized category model | Low | Mock | Refactor |
 | Extract shared status helpers | Stop duplicating status color rules across inventory, supplies, orders, audit, reorder | Existing status helpers in `mock-data.ts` | Low | Mock | Refactor |
 | Add empty states to inventory tabs | Make filtered/no-data states clear | Inventory category normalization | Low | Mock | Refactor |
 | Verify current build/lint | Catch v0 scaffold type or lint issues before larger work | Dependencies installed | Low | N/A | Refactor |
@@ -76,7 +76,7 @@ Unless the project maintainers explicitly request otherwise, all website data in
 
 | Task | Purpose | Dependencies | Difficulty | Data | Type |
 |------|---------|--------------|------------|------|------|
-| Replace generic related menu items | Align item detail with Korean BBQ menu mapping | Normalized inventory data | Low | Mock | Refactor |
+| Replace generic related menu items | Align item detail with Sonsie menu mapping | Normalized inventory data | Low | Mock | Refactor |
 | Add stock history section | Show mock adjustments, imports, and orders affecting the item | Activity mock modules | Medium | Mock | New feature |
 | Add supplier panel | Show preferred supplier, unit cost, lead time, and Sysco placeholder | Supplier mock data | Low | Mock | New feature |
 | Add mapping panel | Preview item-to-menu ingredient usage | Menu item mock data | Medium | Mock | New feature |
@@ -90,7 +90,7 @@ Unless the project maintainers explicitly request otherwise, all website data in
 | Extract CSV dropzone | Move upload UI out of route page | Existing `csv-import/page.tsx` | Low | Mock | Refactor |
 | Extract import preview table | Make parsed row preview reusable and testable | CSV dropzone extraction | Medium | Mock | Refactor |
 | Add column mapping step | Support real-world CSV format variation without backend | Import preview table | Medium | Mock | New feature |
-| Replace generic parsed rows | Use Korean BBQ order history examples | Feature mock data | Low | Mock | Refactor |
+| Replace generic parsed rows | Use Sonsie order history examples | Feature mock data | Low | Mock | Refactor |
 | Add import summary and warnings | Clarify valid, warning, skipped, and unmapped rows | Validation mock helper | Medium | Mock | New feature |
 
 ---
@@ -125,7 +125,7 @@ Unless the project maintainers explicitly request otherwise, all website data in
 | Centralize activity mock data | Unify dashboard feed, audit log, and item detail history | Mock data split | Medium | Mock | Refactor |
 | Add activity event types | Model adjustment, import, order, supplier sync, mapping update | Activity mock module | Low | Mock | New feature |
 | Reframe forecasting copy | Make it clear forecast data is mocked and operational | Existing forecasting page | Low | Mock | Refactor |
-| Replace generic forecast items | Use Korean BBQ ingredients and supply categories | Inventory mock data | Low | Mock | Refactor |
+| Replace generic forecast items | Use Sonsie ingredients and supply categories | Inventory mock data | Low | Mock | Refactor |
 | Add forecast-to-reorder path | Link projected shortages to reorder recommendations | Reorder route | Medium | Mock | New feature |
 
 ---
@@ -157,8 +157,8 @@ Why this is the best next task:
 Suggested scope:
 
 - Update `InventoryItem.category` to `ingredient | supply | tool`.
-- Add `subcategory` for `meat | seafood | vegetable | sauce | banchan | disposable | serviceware | grill_tool | equipment`.
-- Update centralized mock fixtures with Korean BBQ-focused ingredients, supplies, and tools.
+- Add `subcategory` for `meat | seafood | vegetable | sauce | produce | disposable | serviceware | bar_tool | equipment`.
+- Update centralized mock fixtures with Sonsie-focused ingredients, supplies, and tools.
 - Do not add new hardcoded page/component data; route all sample input/output through fixtures or `.txt` sample files.
 - Update `inventory/page.tsx` tab filters to use the normalized categories.
 - Ensure `SuppliesTable` either consumes the same supply mock source or remains clearly dashboard-specific until extracted.

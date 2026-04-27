@@ -1,4 +1,4 @@
-# Drop Your Pantry UI Rules
+# Sonsie UI Rules
 
 **Date:** 2026-04-13 01:08 -04:00
 **Audience:** Project team
@@ -10,7 +10,7 @@
 
 ## Overview
 
-The current UI already has a useful warm dark base, GEN Korean BBQ logo, sidebar shell, dashboard widgets, alert panels, tables, and charts. Evolve it toward a premium Korean BBQ restaurant operations tool. Do not make it feel like a generic SaaS admin dashboard.
+The current UI already has a useful warm dark base, Sonsie logo, sidebar shell, dashboard widgets, alert panels, tables, and charts. Evolve it toward a premium bistro and wine bar operations tool. Do not make it feel like a generic SaaS admin dashboard.
 
 ---
 
@@ -19,7 +19,7 @@ The current UI already has a useful warm dark base, GEN Korean BBQ logo, sidebar
 | Principle | Rule |
 |-----------|------|
 | Restaurant operations first | Prioritize readiness, shortages, counts, supplier actions, and service-day context |
-| Premium Korean BBQ feel | Use charcoal, ember, fire, subtle gold, restrained depth, and brand imagery |
+| Premium Sonsie feel | Use charcoal, wine, brass, restrained depth, and brand imagery |
 | Dense but calm | Tables should be compact and fast to scan without looking cramped |
 | Actionable alerts | Every critical alert should suggest the next operational action |
 | Mock honesty | Label mock integrations and forecasting states clearly |

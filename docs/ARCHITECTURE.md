@@ -1,4 +1,4 @@
-# Drop Your Pantry Architecture
+# Sonsie Architecture
 
 **Date:** 2026-04-13 01:08 -04:00
 **Audience:** Project team
@@ -43,7 +43,7 @@ The architecture goal is to evolve this scaffold incrementally into a maintainab
 |   |-- mock-data.ts
 |   `-- utils.ts
 |-- public/
-|   `-- images/gen-logo.png
+|   `-- images/sonsie-logo.png
 |-- styles/
 |   `-- globals.css
 |-- package.json
@@ -59,7 +59,7 @@ The architecture goal is to evolve this scaffold incrementally into a maintainab
 
 | Area | Purpose | Notes |
 |------|---------|-------|
-| `app/layout.tsx` | Root document, fonts, metadata, icons, analytics | Already uses GEN Korean BBQ metadata and Korean-friendly typography |
+| `app/layout.tsx` | Root document, fonts, metadata, and icons | Uses Sonsie branding and app-wide providers |
 | `app/page.tsx` | Mock login page | Client-side only; pushes to `/dashboard` after fake delay |
 | `app/dashboard/layout.tsx` | Dashboard shell wrapper | Fixed left sidebar with `pl-64`; needs responsive/mobile improvement |
 | `app/dashboard/page.tsx` | Overview dashboard | Composes KPI cards, readiness, chart, supplies, alerts, quick actions, activity |
@@ -83,8 +83,8 @@ The architecture goal is to evolve this scaffold incrementally into a maintainab
 | Strength | Why It Matters |
 |----------|----------------|
 | Working dashboard shell | Gives future work a stable navigation and layout base |
-| Warm dark theme in `app/globals.css` | Already close to the premium Korean BBQ direction |
-| GEN logo assets and metadata | Useful brand foundation |
+| Warm dark theme in `app/globals.css` | Already close to the premium bistro direction |
+| Sonsie logo assets and metadata | Useful brand foundation |
 | shadcn-style `components/ui` primitives | Good accessibility and component consistency base |
 | Dashboard composition | Overview page already composes focused widgets |
 | Inline table editing | Important for restaurant inventory workflows |
@@ -102,7 +102,7 @@ The architecture goal is to evolve this scaffold incrementally into a maintainab
 | Repeated table shells | Inventory, supplies, orders, audit, and recommendations repeat borders, headers, empty states, and action cells | Extract shared `DataTableShell` or small table composition helpers |
 | Fixed desktop sidebar | `pl-64` layout is not iOS/tablet friendly | Add responsive sidebar/mobile nav without replacing the shell |
 | Overclaiming integrations | Future integrations can be mistaken for active behavior if copy is not explicit | Label placeholders accurately until real integrations exist |
-| Generic restaurant content | Chicken parmesan, olive oil, roma tomatoes, and salmon examples weaken Korean BBQ positioning | Replace with Korean BBQ inventory/menu examples |
+| Generic restaurant content | Generic ingredients and vendor examples weaken the Sonsie-specific demo | Keep mock data aligned to Sonsie operations |
 | Large page files | Orders, settings, forecasting, and CSV import are long client components | Extract feature components gradually |
 | Duplicate globals | `styles/globals.css` duplicates default shadcn theme and is likely unused | Remove or clearly mark unused after verification |
 
@@ -221,7 +221,7 @@ lib/mock/
 Rules:
 
 - Keep mock data typed with exported domain types.
-- Use Korean BBQ-relevant item names and categories.
+- Use Sonsie-relevant item names and categories.
 - Model inventory categories as `ingredient`, `supply`, and `tool`, with optional subcategories like `meat`, `banchan`, `sauce`, `disposable`, `serviceware`, `grill_tool`, and `equipment`.
 - Keep status calculation helpers separate from fixture arrays.
 - Keep mock user actions obvious; do not fake persistence silently.
