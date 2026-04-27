@@ -24,6 +24,11 @@ function Resolve-CommandPath {
 $repoRoot = Split-Path -Parent $PSScriptRoot
 Set-Location $repoRoot
 
+$nodePath = Resolve-CommandPath -Name "Node.js" -Candidates @(
+  "$env:ProgramFiles\nodejs\node.exe",
+  "$env:LocalAppData\Programs\nodejs\node.exe"
+)
+
 $npmPath = Resolve-CommandPath -Name "Node.js" -Candidates @(
   "$env:ProgramFiles\nodejs\npm.cmd",
   "$env:LocalAppData\Programs\nodejs\npm.cmd"
@@ -31,6 +36,7 @@ $npmPath = Resolve-CommandPath -Name "Node.js" -Candidates @(
 
 if ($ValidateOnly) {
   Write-Host "Repo root: $repoRoot"
+  Write-Host "node: $nodePath"
   Write-Host "npm: $npmPath"
   exit 0
 }
@@ -40,8 +46,8 @@ if (-not $SkipInstall) {
 }
 
 $quotedRepoRoot = $repoRoot.Replace("'", "''")
-$quotedNpmPath = $npmPath.Replace("'", "''")
-$serverCommand = "Set-Location '$quotedRepoRoot'; & '$quotedNpmPath' run dev"
+$quotedNodePath = $nodePath.Replace("'", "''")
+$serverCommand = "Set-Location '$quotedRepoRoot'; & '$quotedNodePath' .\node_modules\next\dist\bin\next dev"
 
 Start-Process powershell -ArgumentList @(
   "-NoExit",
